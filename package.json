@@ -1,7 +1,7 @@
 {
   "name": "hex-svg",
   "version": "0.1.0",
-  "description": "A simple program that converts binary files to an SVG",
+  "description": "A simple program that converts a binary file into an SVG",
   "main": "index.js",
   "repository": {
     "type": "git",

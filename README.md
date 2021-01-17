@@ -1,2 +1,2 @@
 # BinarySVG
- A simple program that converts binary files to an SVG
+A simple program that converts a binary file into an SVG
