@@ -1,0 +1,20 @@
+{
+  "name": "hex-svg",
+  "version": "0.1.0",
+  "description": "A simple program that converts binary files to an SVG",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrostBird347/HexSVG.git"
+  },
+  "keywords": [
+    "SVG",
+    "Cipher"
+  ],
+  "author": "FrostBird347",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FrostBird347/HexSVG/issues"
+  },
+  "homepage": "https://github.com/FrostBird347/HexSVG"
+}
