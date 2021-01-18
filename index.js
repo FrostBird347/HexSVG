@@ -89,7 +89,7 @@ function DecodeSVG(InputFilePath) {
 	//Remove text between points for large files
 	FixedInput = InputString.replace(/(" style="stroke:#?([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2});fill:none;stroke-width:1" \/>\s\s<polyline points=")/gm, '')
 	//Create array of points
-	var DataArray = DataRegex.exec(FixedInput).toString().replace(/ /g, ',').split(',');
+	var DataArray = DataRegex.exec(FixedInput)[0].toString().replace(/ /g, ',').split(',');
 	var DecodedFile = Array(DataArray.length);
 	//Convert each point into valid hex
 	DataArray.forEach((DecimalData, Index) => {
