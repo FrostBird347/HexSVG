@@ -26,6 +26,14 @@ function Start() {
 	}
 }
 
+function HexColour(input) {
+	var HexColour = Number(input * 16777215).toString(16).substr(0, 6)
+	if (HexColour == "ffffff" || HexColour == "000000") {
+		HexColour = "0f0f0f"
+	}
+	return HexColour
+}
+
 function EncodeSVG(InputFilePath) {
 	try {
 		var InputData = fs.readFileSync(InputFilePath);
@@ -53,7 +61,7 @@ function EncodeSVG(InputFilePath) {
 		SizeCounter++;
 		//Split the polyline every 1000 characters to reduce lag
 		if (SizeCounter % 250 == 0) {
-			OutSVG += `" style="stroke:#` + Number(HexIndex * 16777215).toString(16).substr(0, 6) + `;fill:none;stroke-width:1" />
+			OutSVG += `" style="stroke:#` + HexColour(HexIndex) + `;fill:none;stroke-width:1" />
 	<polyline points="`
 		}
 		var CurrentLinePos = (HexIndex);
@@ -64,7 +72,7 @@ function EncodeSVG(InputFilePath) {
 		OutSVG += (parseInt(Number("0x" + FixedCurrentHexBlock.substring(0, 2)), 10) * 10) + "," + (parseInt(Number("0x" + FixedCurrentHexBlock.substring(2)), 10) * 10) + " ";
 	}
 	//End of the SVG file
-	OutSVG += `" style="stroke:#` + Number(HexString.length * 16777.215).toString(16).substr(0, 6) + `;fill:none;stroke-width:1" />
+	OutSVG += `" style="stroke:#` + HexColour(HexString.length) + `;fill:none;stroke-width:1" />
 </svg>`;
 	fs.writeFileSync( 'encoded.svg', OutSVG);
 }
